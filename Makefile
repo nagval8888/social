@@ -12,6 +12,12 @@ stop:
 	docker compose stop
 down-v:
 	docker compose down -v
+777:
+	sudo chmod 777 -R .
+777-mysql:
+	sudo chmod 777 -R ./_docker/mysql_data
+git-add-all:
+	git add *
 
 # social_app - container name, app - service, node - service,
 social-app:
@@ -30,6 +36,8 @@ tinker:
 # if we change - "all - 1", we get - model, migration, factory, seeder, requests, policy, resource-controller
 php-v:
 	docker conpose exec app php -v
+key:
+	docker compose exec app php artisan key:generate
 migrate:
 	docker compose exec app php artisan migrate
 rollback:
